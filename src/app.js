@@ -13,7 +13,7 @@ app.use(express.json()); // For parsing application/json
 app.use(express.urlencoded({ extended: true })); // For parsing application/x-www-form-urlencoded
 
 // Serve static files (HTML, CSS, JS for frontend)
-app.use(express.static(path.join(__dirname, '../public')));
+// app.use(express.static(path.join(__dirname, '../public'))); // REMOVING THIS LINE
 
 // Basic Health Check Route
 app.get('/health', (req, res) => {
@@ -41,8 +41,8 @@ const PORT = config.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-  console.log(`Access the app at http://localhost:${PORT}/quiz.html`);
-  console.log(`Admin panel at http://localhost:${PORT}/admin.html (V1 - no auth)`);
+  // console.log(`Access the app at http://localhost:${PORT}/quiz.html`); // REMOVING THIS LINE
+  // console.log(`Admin panel at http://localhost:${PORT}/admin.html (V1 - no auth)`); // REMOVING THIS LINE
 });
 
 module.exports = app; // For potential testing or programmatic use 
