@@ -1,0 +1,3 @@
+# src/db/.gitkeep
+# This directory is intended for database related files, such as 
+# initialization scripts, query builders, or direct Knex configurations/instances. 

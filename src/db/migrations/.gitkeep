@@ -1,0 +1,3 @@
+# src/db/migrations/.gitkeep
+# This directory will store Knex database migration files.
+# Migrations are used to manage database schema changes incrementally. 

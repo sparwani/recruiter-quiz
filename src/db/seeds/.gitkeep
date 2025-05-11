@@ -1,0 +1,3 @@
+# src/db/seeds/.gitkeep
+# This directory will store Knex database seed files.
+# Seeds are used to populate the database with initial or test data. 

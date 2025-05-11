@@ -1,0 +1,3 @@
+# src/routes/.gitkeep
+# This directory will contain route definitions for the Express application.
+# Each file typically groups routes related to a specific feature (e.g., quiz, admin). 

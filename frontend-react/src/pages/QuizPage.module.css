@@ -1,0 +1,759 @@
+/* frontend-react/src/pages/QuizPage.module.css */
+
+.quizContainer {
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.quizHeader h1 {
+  font-size: 2em;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.quizHeader p {
+  text-align: center;
+  color: #555;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+.questionCard {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+.questionText {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  color: #222;
+  line-height: 1.5;
+}
+
+.answerOptions label {
+  display: block;
+  background-color: #fff;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.answerOptions label:hover {
+  background-color: #f0f0f0;
+}
+
+.answerOptions input[type="radio"] {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.answerOptions textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  min-height: 100px;
+  font-size: 1em;
+  box-sizing: border-box; /* Important for textarea width */
+}
+
+.feedbackArea {
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.feedbackCorrect {
+  background-color: #28a745; /* Green */
+}
+
+.feedbackIncorrect {
+  background-color: #dc3545; /* Red */
+}
+
+.feedbackPartial {
+  background-color: #ffc107; /* Amber */
+  color: #212529; /* Darker text for amber */
+}
+
+.feedbackHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 8px; /* Add some space before a potential separator */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Subtle line for light text */
+}
+
+.feedbackHeader h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.feedbackScore {
+  margin: 0;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* Adjust color for partial feedback score text if needed */
+.feedbackPartial .feedbackScore,
+.feedbackPartial .feedbackHeader h3 {
+  color: #212529; /* Match text color for partial feedback */
+}
+.feedbackPartial .feedbackHeader {
+  border-bottom-color: rgba(0,0,0,0.1); /* Darker separator for partial */
+}
+
+.feedbackMessage {
+  margin-top: 10px; /* Give some space after the header */
+  margin-bottom: 12px;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.feedbackModelAnswerSection {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Separator for light text */
+}
+.feedbackPartial .feedbackModelAnswerSection {
+   border-top-color: rgba(0,0,0,0.1); /* Darker separator for partial */
+}
+
+.feedbackModelAnswerSection p { /* Target general paragraphs within this section */
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.feedbackModelAnswerText {
+  font-style: italic;
+}
+
+.quizActions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.actionButton {
+  padding: 12px 25px;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.actionButton:hover {
+  background-color: #0056b3;
+}
+
+.actionButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.loadingText,
+.errorText {
+  text-align: center;
+  font-style: italic;
+  padding: 20px;
+}
+
+.errorText {
+  color: red;
+}
+
+.quizCompleteMessage {
+  text-align: center;
+  padding: 30px;
+  font-size: 1.5em;
+}
+
+.nextActionContainer {
+  text-align: center;
+  margin-top: 20px; /* Same as quizActions for consistency */
+} 
+
+.quizContainer {
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.quizHeader h1 {
+  font-size: 2em;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.quizHeader p {
+  text-align: center;
+  color: #555;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+.questionCard {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+.questionText {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  color: #222;
+  line-height: 1.5;
+}
+
+.answerOptions label {
+  display: block;
+  background-color: #fff;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.answerOptions label:hover {
+  background-color: #f0f0f0;
+}
+
+.answerOptions input[type="radio"] {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.answerOptions textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  min-height: 100px;
+  font-size: 1em;
+  box-sizing: border-box; /* Important for textarea width */
+}
+
+.feedbackArea {
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.feedbackCorrect {
+  background-color: #28a745; /* Green */
+}
+
+.feedbackIncorrect {
+  background-color: #dc3545; /* Red */
+}
+
+.feedbackPartial {
+  background-color: #ffc107; /* Amber */
+  color: #212529; /* Darker text for amber */
+}
+
+.feedbackHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 8px; /* Add some space before a potential separator */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Subtle line for light text */
+}
+
+.feedbackHeader h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.feedbackScore {
+  margin: 0;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* Adjust color for partial feedback score text if needed */
+.feedbackPartial .feedbackScore,
+.feedbackPartial .feedbackHeader h3 {
+  color: #212529; /* Match text color for partial feedback */
+}
+.feedbackPartial .feedbackHeader {
+  border-bottom-color: rgba(0,0,0,0.1); /* Darker separator for partial */
+}
+
+.feedbackMessage {
+  margin-top: 10px; /* Give some space after the header */
+  margin-bottom: 12px;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.feedbackModelAnswerSection {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Separator for light text */
+}
+.feedbackPartial .feedbackModelAnswerSection {
+   border-top-color: rgba(0,0,0,0.1); /* Darker separator for partial */
+}
+
+.feedbackModelAnswerSection p { /* Target general paragraphs within this section */
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.feedbackModelAnswerText {
+  font-style: italic;
+}
+
+.quizActions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.actionButton {
+  padding: 12px 25px;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.actionButton:hover {
+  background-color: #0056b3;
+}
+
+.actionButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.loadingText,
+.errorText {
+  text-align: center;
+  font-style: italic;
+  padding: 20px;
+}
+
+.errorText {
+  color: red;
+}
+
+.quizCompleteMessage {
+  text-align: center;
+  padding: 30px;
+  font-size: 1.5em;
+}
+
+.nextActionContainer {
+  text-align: center;
+  margin-top: 20px; /* Same as quizActions for consistency */
+} 
+ 
+
+.quizContainer {
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.quizHeader h1 {
+  font-size: 2em;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.quizHeader p {
+  text-align: center;
+  color: #555;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+.questionCard {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+.questionText {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  color: #222;
+  line-height: 1.5;
+}
+
+.answerOptions label {
+  display: block;
+  background-color: #fff;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.answerOptions label:hover {
+  background-color: #f0f0f0;
+}
+
+.answerOptions input[type="radio"] {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.answerOptions textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  min-height: 100px;
+  font-size: 1em;
+  box-sizing: border-box; /* Important for textarea width */
+}
+
+.feedbackArea {
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.feedbackCorrect {
+  background-color: #28a745; /* Green */
+}
+
+.feedbackIncorrect {
+  background-color: #dc3545; /* Red */
+}
+
+.feedbackPartial {
+  background-color: #ffc107; /* Amber */
+  color: #212529; /* Darker text for amber */
+}
+
+.feedbackHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 8px; /* Add some space before a potential separator */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Subtle line for light text */
+}
+
+.feedbackHeader h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.feedbackScore {
+  margin: 0;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* Adjust color for partial feedback score text if needed */
+.feedbackPartial .feedbackScore,
+.feedbackPartial .feedbackHeader h3 {
+  color: #212529; /* Match text color for partial feedback */
+}
+.feedbackPartial .feedbackHeader {
+  border-bottom-color: rgba(0,0,0,0.1); /* Darker separator for partial */
+}
+
+.feedbackMessage {
+  margin-top: 10px; /* Give some space after the header */
+  margin-bottom: 12px;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.feedbackModelAnswerSection {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Separator for light text */
+}
+.feedbackPartial .feedbackModelAnswerSection {
+   border-top-color: rgba(0,0,0,0.1); /* Darker separator for partial */
+}
+
+.feedbackModelAnswerSection p { /* Target general paragraphs within this section */
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.feedbackModelAnswerText {
+  font-style: italic;
+}
+
+.quizActions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.actionButton {
+  padding: 12px 25px;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.actionButton:hover {
+  background-color: #0056b3;
+}
+
+.actionButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.loadingText,
+.errorText {
+  text-align: center;
+  font-style: italic;
+  padding: 20px;
+}
+
+.errorText {
+  color: red;
+}
+
+.quizCompleteMessage {
+  text-align: center;
+  padding: 30px;
+  font-size: 1.5em;
+}
+
+.nextActionContainer {
+  text-align: center;
+  margin-top: 20px; /* Same as quizActions for consistency */
+} 
+
+.quizContainer {
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.quizHeader h1 {
+  font-size: 2em;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.quizHeader p {
+  text-align: center;
+  color: #555;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+.questionCard {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+.questionText {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  color: #222;
+  line-height: 1.5;
+}
+
+.answerOptions label {
+  display: block;
+  background-color: #fff;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.answerOptions label:hover {
+  background-color: #f0f0f0;
+}
+
+.answerOptions input[type="radio"] {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.answerOptions textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  min-height: 100px;
+  font-size: 1em;
+  box-sizing: border-box; /* Important for textarea width */
+}
+
+.feedbackArea {
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.feedbackCorrect {
+  background-color: #28a745; /* Green */
+}
+
+.feedbackIncorrect {
+  background-color: #dc3545; /* Red */
+}
+
+.feedbackPartial {
+  background-color: #ffc107; /* Amber */
+  color: #212529; /* Darker text for amber */
+}
+
+.feedbackHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 8px; /* Add some space before a potential separator */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Subtle line for light text */
+}
+
+.feedbackHeader h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.feedbackScore {
+  margin: 0;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* Adjust color for partial feedback score text if needed */
+.feedbackPartial .feedbackScore,
+.feedbackPartial .feedbackHeader h3 {
+  color: #212529; /* Match text color for partial feedback */
+}
+.feedbackPartial .feedbackHeader {
+  border-bottom-color: rgba(0,0,0,0.1); /* Darker separator for partial */
+}
+
+.feedbackMessage {
+  margin-top: 10px; /* Give some space after the header */
+  margin-bottom: 12px;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.feedbackModelAnswerSection {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Separator for light text */
+}
+.feedbackPartial .feedbackModelAnswerSection {
+   border-top-color: rgba(0,0,0,0.1); /* Darker separator for partial */
+}
+
+.feedbackModelAnswerSection p { /* Target general paragraphs within this section */
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.feedbackModelAnswerText {
+  font-style: italic;
+}
+
+.quizActions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.actionButton {
+  padding: 12px 25px;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.actionButton:hover {
+  background-color: #0056b3;
+}
+
+.actionButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.loadingText,
+.errorText {
+  text-align: center;
+  font-style: italic;
+  padding: 20px;
+}
+
+.errorText {
+  color: red;
+}
+
+.quizCompleteMessage {
+  text-align: center;
+  padding: 30px;
+  font-size: 1.5em;
+}
+
+.nextActionContainer {
+  text-align: center;
+  margin-top: 20px; /* Same as quizActions for consistency */
+} 
+ 

@@ -1,0 +1,140 @@
+/* frontend-react/src/components/QuestionGenerator.module.css */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+  /* border: 1px solid #e0e0e0; /* Being applied by adminSectionBox */
+  /* border-radius: 6px; */
+  /* background-color: #f9f9f9; */ /* Being applied by adminSectionBox */
+}
+
+.form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form select,
+.form input[type='number'] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form button {
+  padding: 10px 15px;
+  background-color: #28a745; /* Green for generate */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease-in-out;
+  align-self: flex-start; /* Prevent button from stretching full width */
+}
+
+.form button:hover {
+  background-color: #218838;
+}
+
+.form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.statusMessage {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.statusMessageSuccess {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.statusMessageError {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+} 
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+  /* border: 1px solid #e0e0e0; /* Being applied by adminSectionBox */
+  /* border-radius: 6px; */
+  /* background-color: #f9f9f9; */ /* Being applied by adminSectionBox */
+}
+
+.form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form select,
+.form input[type='number'] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form button {
+  padding: 10px 15px;
+  background-color: #28a745; /* Green for generate */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease-in-out;
+  align-self: flex-start; /* Prevent button from stretching full width */
+}
+
+.form button:hover {
+  background-color: #218838;
+}
+
+.form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.statusMessage {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.statusMessageSuccess {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.statusMessageError {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+} 
+ 

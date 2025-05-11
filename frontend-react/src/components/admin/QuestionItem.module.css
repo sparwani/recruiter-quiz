@@ -1,0 +1,174 @@
+/* frontend-react/src/components/admin/QuestionItem.module.css */
+
+.questionItem {
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.questionDetails p {
+  margin: 5px 0;
+  color: #333;
+  word-break: break-word; /* Prevent long strings from breaking layout */
+}
+
+.questionDetails strong {
+  color: #111;
+}
+
+.questionDetails pre {
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 4px;
+  white-space: pre-wrap; /* Wrap long lines in preformatted text */
+  word-break: break-all; /* Ensure long unbreakable strings also wrap */
+  font-family: monospace;
+  margin-top: 8px;
+}
+
+.questionActions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px; /* Spacing between buttons */
+}
+
+.actionButton {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+
+.actionButton:hover {
+  transform: translateY(-1px);
+}
+
+.approveBtn {
+  background-color: #28a745; /* Green */
+  color: white;
+}
+.approveBtn:hover {
+  background-color: #218838;
+}
+
+.rejectBtn {
+  background-color: #dc3545; /* Red */
+  color: white;
+}
+.rejectBtn:hover {
+  background-color: #c82333;
+}
+
+.makePendingBtn {
+  background-color: #ffc107; /* Amber */
+  color: #212529; /* Dark text for better contrast on amber */
+}
+.makePendingBtn:hover {
+  background-color: #e0a800;
+}
+
+.deactivateBtn {
+  background-color: #fd7e14; /* Orange for warning/deactivate */
+  color: white;
+}
+.deactivateBtn:hover {
+  background-color: #e66c0d;
+}
+
+.actionButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+} 
+
+.questionItem {
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.questionDetails p {
+  margin: 5px 0;
+  color: #333;
+  word-break: break-word; /* Prevent long strings from breaking layout */
+}
+
+.questionDetails strong {
+  color: #111;
+}
+
+.questionDetails pre {
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 4px;
+  white-space: pre-wrap; /* Wrap long lines in preformatted text */
+  word-break: break-all; /* Ensure long unbreakable strings also wrap */
+  font-family: monospace;
+  margin-top: 8px;
+}
+
+.questionActions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px; /* Spacing between buttons */
+}
+
+.actionButton {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+
+.actionButton:hover {
+  transform: translateY(-1px);
+}
+
+.approveBtn {
+  background-color: #28a745; /* Green */
+  color: white;
+}
+.approveBtn:hover {
+  background-color: #218838;
+}
+
+.rejectBtn {
+  background-color: #dc3545; /* Red */
+  color: white;
+}
+.rejectBtn:hover {
+  background-color: #c82333;
+}
+
+.makePendingBtn {
+  background-color: #ffc107; /* Amber */
+  color: #212529; /* Dark text for better contrast on amber */
+}
+.makePendingBtn:hover {
+  background-color: #e0a800;
+}
+
+.deactivateBtn {
+  background-color: #fd7e14; /* Orange for warning/deactivate */
+  color: white;
+}
+.deactivateBtn:hover {
+  background-color: #e66c0d;
+}
+
+.actionButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+} 
+ 
